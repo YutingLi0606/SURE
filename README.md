@@ -6,7 +6,7 @@ Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and 
 [[Google Drive]](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
 
 <p align="center">
-<img src="img/teaser.png" width="1000px" alt="teaser">
+<img src="img/Teaser.png" width="1000px" alt="teaser">
 </p>
 
 If our project is helpful for your research, please consider citing :
