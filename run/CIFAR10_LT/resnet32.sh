@@ -1,0 +1,77 @@
+python3 main.py \
+--batch-size 128 \
+--gpu 0 \
+--epochs 200 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--mixup-beta 10 \
+--use-cosine \
+--save-dir ./CIFAR10_LT/res32_out \
+Cifar10_LT
+
+python3 test.py \
+--batch-size 128 \
+--gpu 0 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--use-cosine \
+--save-dir ./CIFAR10_LT/res32_out \
+Cifar10_LT
+
+python3 main.py \
+--batch-size 128 \
+--gpu 0 \
+--epochs 200 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--mixup-beta 10 \
+--use-cosine \
+--save-dir ./CIFAR10_LT_50/res32_out \
+Cifar10_LT_50
+
+python3 test.py \
+--batch-size 128 \
+--gpu 0 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--use-cosine \
+--save-dir ./CIFAR10_LT_50/res32_out \
+Cifar10_LT_50
+
+python3 main.py \
+--batch-size 128 \
+--gpu 0 \
+--epochs 200 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--mixup-beta 10 \
+--use-cosine \
+--save-dir ./CIFAR10_LT_100/res32_out \
+Cifar10_LT_100
+
+python3 test.py \
+--batch-size 128 \
+--gpu 0 \
+--nb-run 3 \
+--model-name resnet32 \
+--optim-name fmfp \
+--crl-weight 0 \
+--mixup-weight 1 \
+--use-cosine \
+--save-dir ./CIFAR10_LT_100/res32_out \
+Cifar10_LT_100
