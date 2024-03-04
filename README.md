@@ -2,7 +2,7 @@
 Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and robust deep networks"
 
 [[Project Page]](https://yutingli0606.github.io/SURE/)
-[[arXiv]](https://arxiv.org/pdf/2403.00543.pdf) 
+[[arXiv]](https://arxiv.org/abs/2403.00543) 
 [[Google Drive]](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
 
 <p align="center">
