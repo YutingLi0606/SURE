@@ -4,7 +4,7 @@ Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and 
 [[Project Page]](https://yutingli0606.github.io/SURE/)
 [[arXiv]](https://arxiv.org/abs/2403.00543) 
 [[Google Drive]](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
-
+[[Poster]](img/poster.pdf)
 <p align="center">
 <img src="img/Teaser.png" width="1000px" alt="teaser">
 </p>
