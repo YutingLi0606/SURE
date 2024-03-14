@@ -336,6 +336,8 @@ Take a example in run/CIFAR10/wideresnet.sh:
 <summary>
 Take a example in run/CIFAR10/deit.sh:
 
+
+You can download official checkpoint from [[here]](https://github.com/facebookresearch/deit/blob/main/README_deit.md)
 </summary>
   <details>
    <summary>

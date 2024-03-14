@@ -22,9 +22,10 @@ def get_args_parser():
     parser.add_argument('--mixup-beta', default=10.0, type=float, help='beta used in the mixup data aug')
 
     ## Model + optim method + data aug + loss + post-hoc
-    parser.add_argument('--model-name', default='resnet18', type=str,choices = ['resnet18', 'resnet32', 'resnet50', 'resnet110', 'densenet', 'wrn', 'cmixer', 'efficientnet','mobilenet', 'vgg', 'vgg19bn', 'vit_cifar', 'resnext', 'deit'],
+    parser.add_argument('--model-name', default='resnet18', type=str,choices = ['resnet18', 'resnet32', 'resnet50', 'densenet', 'wrn', 'vgg', 'vgg19bn', 'deit'],
                         help='Models name to use')
     parser.add_argument('--resume-path', type=str, help='resume path')
+    parser.add_argument('--deit-path', default = '/home/liyuting/lyt/deit_base_patch16_224-b5f2ef4d.pth', type=str, help='Official DeiT checkpoints')
     parser.add_argument('--optim-name', default='baseline', type=str, choices=['baseline', 'sam', 'swa', 'fmfp'],
                         help='Supported methods for optimization process')
 

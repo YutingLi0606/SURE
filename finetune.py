@@ -47,7 +47,7 @@ os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
 train_loader, valid_loader, _, nb_cls = data.dataset.get_loader(args.data_name, args.train_dir, args.val_dir,
                                                                 args.test_dir,
-                                                                args.batch_size, args.imb_factor)
+                                                                args.batch_size, args.imb_factor, args.model_name)
 
 for r in range(args.nb_run):
     prefix = '{:d} / {:d} Running'.format(r + 1, args.nb_run)

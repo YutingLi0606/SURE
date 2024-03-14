@@ -70,14 +70,20 @@ def TestDataLoader(img_dir, transform_test, batch_size):
 
     return test_loader
 
-def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor):
+def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, model_name):
 
 
     if dataset in ['cifar10','cifar10_LT']:
-        norm_mean, norm_std = (0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)
+        if model_name == 'deit':
+            norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        else:
+            norm_mean, norm_std = (0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010)
         nb_cls = 10
     elif dataset in ['cifar100', 'cifar100_LT']:
-        norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
+        if model_name == 'deit':
+            norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        else:
+            norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
         nb_cls = 100
     elif dataset == 'Animal10N':
         norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
@@ -93,20 +99,28 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor):
         nb_cls = 200
 
     if dataset in ['cifar10', 'cifar10_LT', 'cifar100', 'cifar100_LT']:
-        transform_train = torchvision.transforms.Compose([
-                                                        # torchvision.transforms.RandomCrop(32, padding=4),
-            torchvision.transforms.Resize(256),
-            torchvision.transforms.CenterCrop(224),
-            torchvision.transforms.RandomHorizontalFlip(),
-
-                                                        torchvision.transforms.ToTensor(),
-                                                        torchvision.transforms.Normalize(norm_mean, norm_std)])
+        if model_name == 'deit':
+            transform_train = torchvision.transforms.Compose([
+                                                            torchvision.transforms.Resize(256),
+                                                            torchvision.transforms.CenterCrop(224),
+                                                            torchvision.transforms.RandomHorizontalFlip(),
+                                                            torchvision.transforms.ToTensor(),
+                                                            torchvision.transforms.Normalize(norm_mean, norm_std)])
         # transformation of the test set
-        transform_test = torchvision.transforms.Compose([
+            transform_test = torchvision.transforms.Compose([
             torchvision.transforms.Resize(256),
             torchvision.transforms.CenterCrop(224),
             torchvision.transforms.ToTensor(),
-                                                        torchvision.transforms.Normalize(norm_mean, norm_std)])
+            torchvision.transforms.Normalize(norm_mean, norm_std)])
+        else:
+            transform_train = torchvision.transforms.Compose([
+                                                            torchvision.transforms.RandomCrop(32, padding=4),
+                                                            torchvision.transforms.RandomHorizontalFlip(),
+                                                            torchvision.transforms.ToTensor(),
+                                                            torchvision.transforms.Normalize(norm_mean, norm_std)])
+        # transformation of the test set
+            transform_test = torchvision.transforms.Compose([torchvision.transforms.ToTensor(),
+                                                            torchvision.transforms.Normalize(norm_mean, norm_std)])
     elif dataset in ['Animal10N', 'TinyImgNet']:
         transform_train = torchvision.transforms.Compose([
                                                         torchvision.transforms.RandomCrop(64, padding=4),
@@ -123,10 +137,10 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor):
                                                         torchvision.transforms.ToTensor(),
                                                         torchvision.transforms.Normalize(norm_mean, norm_std)])
         transform_test = torchvision.transforms.Compose([
-                                            torchvision.transforms.Resize(256), 
-                                            torchvision.transforms.CenterCrop(224), 
-                                            torchvision.transforms.ToTensor(),
-                                            torchvision.transforms.Normalize(norm_mean, norm_std)])
+                                                        torchvision.transforms.Resize(256),
+                                                        torchvision.transforms.CenterCrop(224),
+                                                        torchvision.transforms.ToTensor(),
+                                                        torchvision.transforms.Normalize(norm_mean, norm_std)])
 
     train_loader = TrainDataLoader(train_dir, transform_train, batch_size, is_train=True, dataset_type=dataset, imb_factor=imb_factor)
     val_loader = TestDataLoader(val_dir, transform_test, batch_size)

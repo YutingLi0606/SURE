@@ -9,7 +9,7 @@ python3 main.py \
 --mixup-weight 1 \
 --mixup-beta 10 \
 --use-cosine \
---save-dir ./CIFAR10_LT/res32_out \
+--save-dir ./CIFAR10_LT_out/res32_out \
 Cifar10_LT
 
 python3 test.py \
@@ -21,7 +21,7 @@ python3 test.py \
 --crl-weight 0 \
 --mixup-weight 1 \
 --use-cosine \
---save-dir ./CIFAR10_LT/res32_out \
+--save-dir ./CIFAR10_LT_out/res32_out \
 Cifar10_LT
 
 python3 main.py \
@@ -35,7 +35,7 @@ python3 main.py \
 --mixup-weight 1 \
 --mixup-beta 10 \
 --use-cosine \
---save-dir ./CIFAR10_LT_50/res32_out \
+--save-dir ./CIFAR10_LT_50_out/res32_out \
 Cifar10_LT_50
 
 python3 test.py \
@@ -47,7 +47,7 @@ python3 test.py \
 --crl-weight 0 \
 --mixup-weight 1 \
 --use-cosine \
---save-dir ./CIFAR10_LT_50/res32_out \
+--save-dir ./CIFAR10_LT_50_out/res32_out \
 Cifar10_LT_50
 
 python3 main.py \
@@ -61,7 +61,7 @@ python3 main.py \
 --mixup-weight 1 \
 --mixup-beta 10 \
 --use-cosine \
---save-dir ./CIFAR10_LT_100/res32_out \
+--save-dir ./CIFAR10_LT_100_out/res32_out \
 Cifar10_LT_100
 
 python3 test.py \
@@ -73,5 +73,5 @@ python3 test.py \
 --crl-weight 0 \
 --mixup-weight 1 \
 --use-cosine \
---save-dir ./CIFAR10_LT_100/res32_out \
+--save-dir ./CIFAR10_LT_100_out/res32_out \
 Cifar10_LT_100

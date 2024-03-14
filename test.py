@@ -44,11 +44,6 @@ def test():
     results_storage = {metric: [] for metric in metrics}
     cor_results_all_models = {}
 
-    transform_test = torchvision.transforms.Compose([
-        torchvision.transforms.ToTensor(),
-        torchvision.transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
-    ])
-
     save_path = os.path.join(args.save_dir,
                              f"{args.data_name}_{args.model_name}_{args.optim_name}-mixup_{args.mixup_weight}-crl_{args.crl_weight}")
     logger = utils.utils.get_logger(save_path)
@@ -56,7 +51,7 @@ def test():
     for r in range(args.nb_run):
         logger.info(f'Testing model_{r + 1} ...')
         _, valid_loader, test_loader, nb_cls = data.dataset.get_loader(args.data_name, args.train_dir, args.val_dir,
-                                                                       args.test_dir, args.batch_size, args.imb_factor)
+                                                                       args.test_dir, args.batch_size, args.imb_factor, args.model_name)
         print(nb_cls)
         net = model.get_model.get_model(args.model_name, nb_cls, logger, args)
         if args.optim_name == 'fmfp' or args.optim_name == 'swa':
@@ -66,6 +61,10 @@ def test():
         process_results(test_loader, net, metrics, logger, "MSP", results_storage)
 
         if args.data_name == 'cifar10':
+            transform_test = torchvision.transforms.Compose([
+                torchvision.transforms.ToTensor(),
+                torchvision.transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
+            ])
             cor_results_storage = test_cifar10c_corruptions(net, args.corruption_dir, transform_test, args.batch_size,
                                                             metrics, logger)
             cor_results = {corruption: {

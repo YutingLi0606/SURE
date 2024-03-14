@@ -34,7 +34,7 @@ logger.info(json.dumps(vars(args), indent=4, sort_keys=True))
 os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu
 
 train_loader, valid_loader, _, nb_cls = data.dataset.get_loader(args.data_name, args.train_dir, args.val_dir,args.test_dir,
-                                                                      args.batch_size, args.imb_factor)
+                                                                      args.batch_size, args.imb_factor, args.model_name)
 
 for r in range(args.nb_run):
     prefix = '{:d} / {:d} Running'.format(r + 1, args.nb_run)
@@ -67,7 +67,6 @@ for r in range(args.nb_run):
 
         if args.optim_name in ['swa', 'fmfp'] :
             if epoch > args.swa_epoch_start:
-                print('111111111111')
                 swa_model.update_parameters(net)
                 swa_scheduler.step()
             else:
@@ -96,21 +95,7 @@ for r in range(args.nb_run):
             logger.info(msg)
             best_acc = acc
             torch.save(net_val.state_dict(),os.path.join(save_path, f'best_acc_net_{r+1}.pth'))
-        
-        # if res['AUROC'] > best_auroc :
-        #     auroc = res['AUROC']
-        #     msg = f'AUROC improved from {best_auroc:.2f} to {auroc:.2f}!!!'
-        #     logger.info(msg)
-        #     best_auroc = auroc
-        #     torch.save(net_val.state_dict(), os.path.join(save_path, f'best_auroc_net_{r+1}.pth'))
-        #
-        # if res['AURC'] < best_aurc :
-        #     aurc = res['AURC']
-        #     msg = f'AURC decreased from {best_aurc:.2f} to {aurc:.2f}!!!'
-        #     logger.info(msg)
-        #     best_aurc = aurc
-        #     torch.save(net_val.state_dict(), os.path.join(save_path, f'best_aurc_net_{r+1}.pth'))
-    
+
 
 
 
