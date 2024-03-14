@@ -2,22 +2,7 @@ import numpy as np
 import torchvision.transforms
 from torch.utils.data import DataLoader, Subset, Dataset
 from torchvision.datasets import ImageFolder
-import data.dataset
 
-from PIL import ImageFilter
-import random
-
-
-class GaussianBlur(object):
-    """Gaussian blur augmentation in SimCLR https://arxiv.org/abs/2002.05709"""
-
-    def __init__(self, sigma=[.1, 2.]):
-        self.sigma = sigma
-
-    def __call__(self, x):
-        sigma = random.uniform(self.sigma[0], self.sigma[1])
-        x = x.filter(ImageFilter.GaussianBlur(radius=sigma))
-        return x
 
 def generate_imbalanced_data(indices, labels, imb_factor, num_classes):
     class_indices = [np.where(labels == i)[0] for i in range(num_classes)]
@@ -99,7 +84,7 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, mo
         nb_cls = 200
 
     if dataset in ['cifar10', 'cifar10_LT', 'cifar100', 'cifar100_LT']:
-        if model_name == 'deit':
+        if model_name == 'deit':                            # Refer to official DeiT repository : https://github.com/facebookresearch/deit/blob/main/datasets.py
             transform_train = torchvision.transforms.Compose([
                                                             torchvision.transforms.Resize(256),
                                                             torchvision.transforms.CenterCrop(224),
