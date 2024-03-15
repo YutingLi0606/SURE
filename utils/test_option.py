@@ -9,6 +9,8 @@ def get_args_parser():
     parser.add_argument('--nb-run', default=3, type=int, help='Run n times, in order to compute std')
     parser.add_argument('--gpu', default='9', type=str, help='GPU id to use')
     parser.add_argument('--save-dir', default='./output', type=str, help='Output directory')
+    parser.add_argument('--deit-path', default='/home/liyuting/lyt/deit_base_patch16_224-b5f2ef4d.pth', type=str,
+                        help='Official DeiT checkpoints')
     ## cosine classifier
     parser.add_argument('--use-cosine', action='store_true', default=False, help='whether use cosine classifier ')
     parser.add_argument('--cos-temp', type=int, default=8, help='temperature for scaling cosine similarity')
