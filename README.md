@@ -52,7 +52,7 @@ The code was tested on Python 3.9 and PyTorch 1.13.0.
 
 ### 3.2. Datasets
 #### 3.2.1 CIFAR and Tiny-ImageNet
-* Using **CIFAR10, CIFAR100 and Tiny-ImageNet** for failure prediction(also known as misclassification detection).
+* Using **CIFAR10, CIFAR100 and Tiny-ImageNet** for failure prediction (also known as misclassification detection).
 * We keep **10%** of training samples as a validation dataset for failure prediction. 
 * Download datasets to ./data/ and split into train/val/test.
 Take CIFAR10 for an example:
@@ -337,7 +337,10 @@ Take a example in run/CIFAR10/wideresnet.sh:
 Take a example in run/CIFAR10/deit.sh:
 
 
-For DeiT-B, download official checkpoint from [[here]](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
+* Note that for DeiT-B, one should download the checkpoint pretrained on ImageNet from [here](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
+
+* Then one should set `--deit-path` argument.
+
 </summary>
   <details>
    <summary>
