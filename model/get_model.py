@@ -11,9 +11,9 @@ import torch
 def get_model(model_name, nb_cls, logger, args):
     if model_name == 'resnet18':
         net = model.resnet18.ResNet18(num_classes=nb_cls, use_cos=args.use_cosine, cos_temp=args.cos_temp).cuda()
-    if model_name == 'resnet32':
+    elif model_name == 'resnet32':
         net = model.resnet32.ResNet32(num_classes=nb_cls, use_cos=args.use_cosine, cos_temp=args.cos_temp).cuda()
-    if model_name == 'resnet50':
+    elif model_name == 'resnet50':
         net = model.resnet32.ResNet50(num_classes=nb_cls, use_cos=args.use_cosine, cos_temp=args.cos_temp).cuda()
     elif model_name == 'densenet':
         net = model.densenet_BC.DenseNet3(depth=100,
