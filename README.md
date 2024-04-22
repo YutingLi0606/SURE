@@ -102,6 +102,16 @@ The structure of the file should be:
 ...
 ```
 
+#### 3.2.5 Stanford CARS
+* We additionally run experiments on **Stanford CARS**, which contains 16,185 images of 196 classes of cars. The data is split into 8,144 training images and 8,041 testing images
+* To download  the dataset, please refer to [here](http://ai.stanford.edu/~jkrause/cars/car_dataset.html). The structure of the file should be:
+```
+./data/CARS/
+├── train
+└── test 
+...
+```
+
 ## 4. Quick Start
 * Our model checkpoints are saved [here.](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
 * All results are saved in test_results.csv.
@@ -337,7 +347,11 @@ Take a example in run/CIFAR10/wideresnet.sh:
 Take a example in run/CIFAR10/deit.sh:
 
 
-* Note that for DeiT-B, one should download the checkpoint pretrained on ImageNet from [here](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
+* Official **DeiT-B** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
+
+
+*  Official **DeiT-B-Distilled** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth)
+
 
 * Then one should set `--deit-path` argument.
 

@@ -55,7 +55,7 @@ def TestDataLoader(img_dir, transform_test, batch_size):
 
     return test_loader
 
-def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, model_name):
+def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, model_name, train_size):
 
 
     if dataset in ['cifar10','cifar10_LT']:
@@ -70,6 +70,28 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, mo
         else:
             norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
         nb_cls = 100
+    elif dataset == 'cars':
+        if model_name == 'deit':
+            norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        else:
+            norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
+        nb_cls = 196
+    
+    elif dataset == 'iN2019':
+        if model_name == 'deit':
+            norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        else:
+            norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
+        nb_cls = 1010
+    
+    elif dataset == 'iN2018':
+        if model_name == 'deit':
+            norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
+        else:
+            norm_mean, norm_std = (0.5071, 0.4867, 0.4408), (0.2675, 0.2565, 0.2761)
+        nb_cls = 8142
+    
+    
     elif dataset == 'Animal10N':
         norm_mean, norm_std = (0.485, 0.456, 0.406), (0.229, 0.224, 0.225)
         nb_cls = 10
@@ -97,6 +119,7 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, mo
             torchvision.transforms.CenterCrop(224),
             torchvision.transforms.ToTensor(),
             torchvision.transforms.Normalize(norm_mean, norm_std)])
+        
         else:
             transform_train = torchvision.transforms.Compose([
                                                             torchvision.transforms.RandomCrop(32, padding=4),
@@ -124,6 +147,18 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, mo
         transform_test = torchvision.transforms.Compose([
                                                         torchvision.transforms.Resize(256),
                                                         torchvision.transforms.CenterCrop(224),
+                                                        torchvision.transforms.ToTensor(),
+                                                        torchvision.transforms.Normalize(norm_mean, norm_std)])
+    
+    elif dataset in ['cars', 'iN2019', 'iN2018']:
+        transform_train = torchvision.transforms.Compose([
+                                                        torchvision.transforms.RandomResizedCrop(train_size),
+                                                        torchvision.transforms.RandomHorizontalFlip(),
+                                                        torchvision.transforms.ToTensor(),
+                                                        torchvision.transforms.Normalize(norm_mean, norm_std)])
+        transform_test = torchvision.transforms.Compose([
+                                                        torchvision.transforms.Resize(int(train_size * 1.14)),
+                                                        torchvision.transforms.CenterCrop(train_size),
                                                         torchvision.transforms.ToTensor(),
                                                         torchvision.transforms.Normalize(norm_mean, norm_std)])
 

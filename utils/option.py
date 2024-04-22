@@ -8,7 +8,8 @@ def get_args_parser():
 
     parser.add_argument('--epochs', default=200, type=int, help='Total number of training epochs ')
     parser.add_argument('--batch-size', default=128, type=int, help='Batch size')
-
+    parser.add_argument('--train-size', default=224, type=int, help='train size')
+    
     ## optimizer
     parser.add_argument('--lr', default=0.1, type=float, help='Max learning rate for cosine learning rate scheduler')
     parser.add_argument('--weight-decay', default=5e-4, type=float, help='Weight decay')
@@ -49,12 +50,49 @@ def get_args_parser():
     parser.add_argument('--mixup-weight', default=0.0, type=float, help='Mixup loss weight')
     parser.add_argument('--gpu', default='9', type=str, help='GPU id to use')
 
+
     ## SWA parameters
     parser.add_argument('--swa-lr', default=0.05, type=float, help='swa learning rate')
     parser.add_argument('--swa-epoch-start', default=120, type=int, help='swa start epoch')
-
+    
     ## dataset setting
     subparsers = parser.add_subparsers(title="dataset setting", dest="subcommand")
+    CARS = subparsers.add_parser("CARS",
+                                    description='Dataset parser for training on Stanford CARS',
+                                    add_help=True,
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+                                    help="Dataset parser for training on Stanford CARS")
+    CARS.add_argument('--data-name', default='cars', type=str, help='Dataset name')
+    CARS.add_argument("--train-dir", type=str, default='./data/CARS/train', help="CARS train directory")
+    CARS.add_argument("--val-dir", type=str, default='./data/CARS/test', help="CARS val directory")
+    CARS.add_argument("--test-dir", type=str, default='./data/CARS/test', help="CARS test directory")
+    CARS.add_argument("--nb-cls", type=int, default=196, help="number of classes in CARS")
+    CARS.add_argument("--imb-factor", type=float, default=1.0, help="imbalance rate in CARS")
+
+    iN2019 = subparsers.add_parser("iN2019",
+                                    description='Dataset parser for training on iNaturalist2019',
+                                    add_help=True,
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+                                    help="Dataset parser for training on iNaturalist2019")
+    iN2019.add_argument('--data-name', default='iN2019', type=str, help='Dataset name')
+    iN2019.add_argument("--train-dir", type=str, default='./data/iNaturalist2019/iNaturalist2019_train', help="iNaturalist2019 train directory")
+    iN2019.add_argument("--val-dir", type=str, default='./data/iNaturalist2019/iNaturalist2019_val', help="iNaturalist2019 val directory")
+    iN2019.add_argument("--test-dir", type=str, default='./data/iNaturalist2019/iNaturalist2019_val', help="iNaturalist2019 test directory")
+    iN2019.add_argument("--nb-cls", type=int, default=1010, help="number of classes in iNaturalist2019")
+    iN2019.add_argument("--imb-factor", type=float, default=1.0, help="imbalance rate in iNaturalist2019")
+
+    iN2018 = subparsers.add_parser("iN2018",
+                                    description='Dataset parser for training on iNaturalist2018',
+                                    add_help=True,
+                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+                                    help="Dataset parser for training on iNaturalist2018")
+    iN2018.add_argument('--data-name', default='iN2018', type=str, help='Dataset name')
+    iN2018.add_argument("--train-dir", type=str, default='./data/iNaturalist2018/iNaturalist2018_train', help="iNaturalist2018 train directory")
+    iN2018.add_argument("--val-dir", type=str, default='./data/iNaturalist2018/iNaturalist2018_val', help="iNaturalist2018 val directory")
+    iN2018.add_argument("--test-dir", type=str, default='./data/iNaturalist2018/iNaturalist2018_val', help="iNaturalist2018 test directory")
+    iN2018.add_argument("--nb-cls", type=int, default=8142, help="number of classes in iNaturalist2018")
+    iN2018.add_argument("--imb-factor", type=float, default=1.0, help="imbalance rate in iNaturalist2018")
+    
     Cifar10 = subparsers.add_parser("Cifar10",
                                     description='Dataset parser for training on Cifar10',
                                     add_help=True,
