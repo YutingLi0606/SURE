@@ -342,6 +342,7 @@ Take a example in run/CIFAR10/wideresnet.sh:
   </details>
 </details>
 
+<details>
 Take a example in run/CIFAR10/deit.sh:
 
 * Official **DeiT-B** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
@@ -350,7 +351,7 @@ Take a example in run/CIFAR10/deit.sh:
 
 * Then one should set `--deit-path` argument.
 
-<details>
+
 <summary>
 
 
