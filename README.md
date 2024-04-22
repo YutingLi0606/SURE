@@ -346,12 +346,9 @@ Take a example in run/CIFAR10/wideresnet.sh:
 <summary>
 Take a example in run/CIFAR10/deit.sh:
 
-
 * Official **DeiT-B** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_patch16_224-b5f2ef4d.pth)
 
-
-*  Official **DeiT-B-Distilled** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth)
-
+* Official **DeiT-B-Distilled** can be downloaded from [here](https://dl.fbaipublicfiles.com/deit/deit_base_distilled_patch16_224-df68dfff.pth)
 
 * Then one should set `--deit-path` argument.
 
