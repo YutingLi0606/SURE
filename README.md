@@ -2,7 +2,7 @@
 Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and robust deep networks"
 
 [[Project Page]](https://yutingli0606.github.io/SURE/)
-[[arXiv]](https://arxiv.org/abs/2403.00543) 
+[[PDF]](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_SURE_SUrvey_REcipes_for_building_reliable_and_robust_deep_networks_CVPR_2024_paper.pdf) 
 [[Google Drive]](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
 [[Poster]](img/poster.pdf)
 
@@ -21,11 +21,14 @@ Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and 
 
 If our project is helpful for your research, please consider citing :
 ```
-@inproceedings{li2024sure,
- title={SURE: SUrvey REcipes for building reliable and robust deep networks},
- author={Li, Yuting and Chen, Yingyi and Yu, Xuanlong and Chen, Dexiong and Shen, Xi},
- booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
- year={2024}}
+@InProceedings{Li_2024_CVPR,
+    author    = {Li, Yuting and Chen, Yingyi and Yu, Xuanlong and Chen, Dexiong and Shen, Xi},
+    title     = {SURE: SUrvey REcipes for building reliable and robust deep networks},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {17500-17510}
+}
 ```
 
 ## Table of Content
