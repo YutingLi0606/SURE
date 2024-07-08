@@ -55,7 +55,7 @@ def TestDataLoader(img_dir, transform_test, batch_size):
 
     return test_loader
 
-def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, model_name, train_size):
+def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, model_name):
 
 
     if dataset in ['cifar10','cifar10_LT']:
@@ -152,13 +152,13 @@ def get_loader(dataset, train_dir, val_dir, test_dir, batch_size, imb_factor, mo
     
     elif dataset in ['cars', 'iN2019', 'iN2018']:
         transform_train = torchvision.transforms.Compose([
-                                                        torchvision.transforms.RandomResizedCrop(train_size),
+                                                        torchvision.transforms.RandomResizedCrop(224),
                                                         torchvision.transforms.RandomHorizontalFlip(),
                                                         torchvision.transforms.ToTensor(),
                                                         torchvision.transforms.Normalize(norm_mean, norm_std)])
         transform_test = torchvision.transforms.Compose([
-                                                        torchvision.transforms.Resize(int(train_size * 1.14)),
-                                                        torchvision.transforms.CenterCrop(train_size),
+                                                        torchvision.transforms.Resize(256),
+                                                        torchvision.transforms.CenterCrop(224),
                                                         torchvision.transforms.ToTensor(),
                                                         torchvision.transforms.Normalize(norm_mean, norm_std)])
 
