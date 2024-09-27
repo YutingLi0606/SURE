@@ -1,42 +1,35 @@
-# (CVPR 2024) SURE
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/learning-with-noisy-labels-on-animal)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-animal?p=sure-survey-recipes-for-building-reliable-and) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/image-classification-on-food-101n-1)](https://paperswithcode.com/sota/image-classification-on-food-101n-1?p=sure-survey-recipes-for-building-reliable-and)
+
+
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-50)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-50?p=sure-survey-recipes-for-building-reliable-and)       [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-10)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-10?p=sure-survey-recipes-for-building-reliable-and) 
+
+
+
+# 📝 SURE (CVPR 2024)
 Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and robust deep networks"
 
-[[Project Page]](https://yutingli0606.github.io/SURE/)
-[[PDF]](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_SURE_SUrvey_REcipes_for_building_reliable_and_robust_deep_networks_CVPR_2024_paper.pdf) 
-[[Google Drive]](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
-[[Poster]](img/poster.pdf)
+[![arXiv](https://img.shields.io/badge/arXiv-2403.00543-red.svg)](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_SURE_SUrvey_REcipes_for_building_reliable_and_robust_deep_networks_CVPR_2024_paper.pdf) 
+[![Winner](https://img.shields.io/badge/Winner-ECCV%202024%20OOD--CV%20Challenge-yellow?style=flat)](https://www.ood-cv.org/challenge.html)
 
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/learning-with-noisy-labels-on-animal)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-animal?p=sure-survey-recipes-for-building-reliable-and) 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-10)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-10?p=sure-survey-recipes-for-building-reliable-and) 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-50)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-50?p=sure-survey-recipes-for-building-reliable-and)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/image-classification-on-food-101n-1)](https://paperswithcode.com/sota/image-classification-on-food-101n-1?p=sure-survey-recipes-for-building-reliable-and)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-100)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-100?p=sure-survey-recipes-for-building-reliable-and)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-100-lt-r-10)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-100-lt-r-10?p=sure-survey-recipes-for-building-reliable-and)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-100-lt-r-50)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-100-lt-r-50?p=sure-survey-recipes-for-building-reliable-and)
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-100-lt-r-100)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-100-lt-r-100?p=sure-survey-recipes-for-building-reliable-and)
+[![Project Page](https://img.shields.io/badge/Project%20Page-blue?style=flat)](https://yutingli0606.github.io/SURE/)
+[![Google Drive](https://img.shields.io/badge/Google%20Drive-blue?style=flat)](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
+[![Poster](https://img.shields.io/badge/Poster-blue?style=flat)](img/poster.pdf)
+
+### News
+- **2024.09.26 :**  🏆 🏆 🏆 Our work won the **First place** in [ECCV 2024 OOD-CV Challenge](https://www.ood-cv.org/challenge.html)! More details about our solution can be found in the [SSB-OSR](https://github.com/LIYangggggg/SSB-OSR) repository.
+- **2024.02.27 :** :rocket: :rocket: :rocket: Our paper has been accepted by CVPR 2024! 
 <p align="center">
 <img src="img/Teaser.png" width="1000px" alt="teaser">
 </p>
-
-If our project is helpful for your research, please consider citing :
-```
-@InProceedings{Li_2024_CVPR,
-    author    = {Li, Yuting and Chen, Yingyi and Yu, Xuanlong and Chen, Dexiong and Shen, Xi},
-    title     = {SURE: SUrvey REcipes for building reliable and robust deep networks},
-    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-    month     = {June},
-    year      = {2024},
-    pages     = {17500-17510}
-}
-```
 
 ## Table of Content
 * [1. Overview of recipes](#1-overview-of-recipes)
 * [2. Visual Results](#2-visual-results)
 * [3. Installation](#3-installation)
 * [4. Quick Start](#4-quick-start)
-* [5. Acknowledgement](#5-acknowledgement)
+* [5. Citation](#5-citation)
+* [6. Acknowledgement](#6-acknowledgement)
 
 ## 1. Overview of recipes
 <p align="center">
@@ -859,9 +852,31 @@ The results of failure prediction under distribution shift.
 </p>
 </details>
 
-## 5. Acknowledgement
+## 5. Citation
+If our project is helpful for your research, please consider citing :
+```
+@InProceedings{Li_2024_CVPR,
+    author    = {Li, Yuting and Chen, Yingyi and Yu, Xuanlong and Chen, Dexiong and Shen, Xi},
+    title     = {SURE: SUrvey REcipes for building reliable and robust deep networks},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2024},
+    pages     = {17500-17510}
+}
+```
+and our challenge report:
+```
+@article{Li2024sureood,
+    author    = {Li, Yang and Sha, Youyang and Wu, Shengliang and Li, Yuting and Yu, Xuanlong and Huang, Shihua and Cun, Xiaodong and Chen,Yingyi and Chen, Dexiong and Shen, Xi},
+    title     = {SURE-OOD: Detecting OOD samples with SURE},
+    month     = {September}
+    year      = {2024},
+}
+```
+
+
+
+## 6. Acknowledgement
 
 We appreciate helps from public code like [FMFP](https://github.com/Impression2805/FMFP) and [OpenMix](https://github.com/Impression2805/OpenMix).  
-
-
 
