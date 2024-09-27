@@ -40,6 +40,9 @@ Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and 
 <p align="center">
 <img src="img/confidence.png" width="1000px" alt="method">
 </p>
+<p align="center">
+<img src="img/ood.png" width="650px" alt="method">
+</p>
 
 ## 3. Installation
 
@@ -74,7 +77,11 @@ The structure of the file should be:
 └── test
 ```
 * We have already split Tiny-imagenet, you can download it from [here.](https://drive.google.com/drive/folders/1xT-cX22_I8h5yAYT1WNJmhSLrQFZZ5t1?usp=sharing)
-#### 3.2.2 Animal-10N and Food-101N
+#### 3.2.2 ImageNet1k and ImageNet21k
+* Using **ImageNet1k and ImageNet21k** for detecting out-of-distribution samples.
+* For ImageNet, the ImageNet-1K classes (ILSVRC12 challenge) are used as Known, and specific classes from [ImageNet-21K-P](https://arxiv.org/abs/2104.10972) are selected as Unknown.
+More details about dataset preparation, see [here](https://github.com/sgvaze/SSB/blob/main/DATA.md).
+#### 3.2.3 Animal-10N and Food-101N
 * Using **Animal-10N and Food-101N** for learning with noisy label.
 * To download Animal-10N dataset [[Song et al., 2019]](https://proceedings.mlr.press/v97/song19b/song19b.pdf), please refer to [here](https://dm.kaist.ac.kr/datasets/animal-10n/). The structure of the file should be:
 ```
@@ -88,7 +95,7 @@ The structure of the file should be:
 ├── train
 └── test
 ```
-#### 3.2.3 CIFAR-LT
+#### 3.2.4 CIFAR-LT
 * Using **CIFAR-LT** with imbalance factor(10, 50, 100) for long-tailed classification.
 * Rename the original CIFAR10 and CIFAR100 (do not split into validation set) to 'CIFAR10_LT' and 'CIFAR100_LT' respectively.
 * The structure of the file should be:
@@ -97,7 +104,7 @@ The structure of the file should be:
 ├── train
 └── test
 ```
-#### 3.2.4 CIFAR10-C
+#### 3.2.5 CIFAR10-C
 * Using **CIFAR10-C** to test robustness under data corrputions.
 * To download CIFAR10-C dataset [[Hendrycks et al., 2019]](https://arxiv.org/pdf/1903.12261.pdf), please refer to [here](https://github.com/hendrycks/robustness?tab=readme-ov-file). The structure of the file should be:
 ```
@@ -108,7 +115,7 @@ The structure of the file should be:
 ...
 ```
 
-#### 3.2.5 Stanford CARS
+#### 3.2.6 Stanford CARS
 * We additionally run experiments on **Stanford CARS**, which contains 16,185 images of 196 classes of cars. The data is split into 8,144 training images and 8,041 testing images
 * To download  the dataset, please refer to [here](http://ai.stanford.edu/~jkrause/cars/car_dataset.html). The structure of the file should be:
 ```
@@ -852,6 +859,18 @@ The results of failure prediction under distribution shift.
 </p>
 </details>
 
+### 4.5 Out-of-distribution detection
+* You can test on ImageNet by [SSB-OSR](https://github.com/LIYangggggg/SSB-OSR).
+
+<details>
+<summary>
+The results of out-of-distribution detection.
+</summary>
+<p align="center">
+<img src="img/ood_results.png" width="800px" alt="method">
+</p>
+</details>
+
 ## 5. Citation
 If our project is helpful for your research, please consider citing :
 ```
@@ -863,9 +882,7 @@ If our project is helpful for your research, please consider citing :
     year      = {2024},
     pages     = {17500-17510}
 }
-```
-and our challenge report:
-```
+
 @article{Li2024sureood,
     author    = {Li, Yang and Sha, Youyang and Wu, Shengliang and Li, Yuting and Yu, Xuanlong and Huang, Shihua and Cun, Xiaodong and Chen,Yingyi and Chen, Dexiong and Shen, Xi},
     title     = {SURE-OOD: Detecting OOD samples with SURE},
