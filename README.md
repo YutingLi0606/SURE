@@ -5,8 +5,11 @@
 
 
 
-# 📝 SURE (CVPR 2024)
-Pytorch implementation of paper "SURE: SUrvey REcipes for building reliable and robust deep networks"
+# 📝 SURE (CVPR 2024 & ECCV 2024 OOD-CV Challenge Winner)
+
+### Introduction
+This is the official implementation of our CVPR 2024 paper *"SURE: SUrvey REcipes for building reliable and robust deep networks".* Our recipes are powerful tools in addressing real-world challenges, such as long-tailed classification, learning with noisy labels, data corruption and out-of-distribution detection. If you find this repo useful, please give it a star ⭐ and consider citing our paper. Thank you.
+
 
 [![arXiv](https://img.shields.io/badge/arXiv-2403.00543-red.svg)](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_SURE_SUrvey_REcipes_for_building_reliable_and_robust_deep_networks_CVPR_2024_paper.pdf) 
 [![Winner](https://img.shields.io/badge/Winner-ECCV%202024%20OOD--CV%20Challenge-yellow?style=flat)](https://www.ood-cv.org/challenge.html)
@@ -894,6 +897,6 @@ If our project is helpful for your research, please consider citing :
 
 
 ## 6. Acknowledgement
+We refer to codes from [FMFP](https://github.com/Impression2805/FMFP) and [OpenMix](https://github.com/Impression2805/OpenMix). Thanks for their awesome works.
 
-We appreciate helps from public code like [FMFP](https://github.com/Impression2805/FMFP) and [OpenMix](https://github.com/Impression2805/OpenMix).  
 
