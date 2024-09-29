@@ -1,6 +1,5 @@
 import model.resnet18
 import model.resnet32
-import model.resnet50
 import model.densenet_BC
 import model.vgg
 import model.wrn
