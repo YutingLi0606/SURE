@@ -8,7 +8,7 @@
 # 📝 SURE (CVPR 2024 & ECCV 2024 OOD-CV Challenge Winner)
 
 ### Introduction
-This is the official implementation of our CVPR 2024 paper *"SURE: SUrvey REcipes for building reliable and robust deep networks".* Our recipes are powerful tools in addressing real-world challenges, such as long-tailed classification, learning with noisy labels, data corruption and out-of-distribution detection. If you find this repo useful, please give it a star ⭐ and consider citing our paper. Thank you.
+This is the official implementation of our CVPR 2024 paper *"SURE: SUrvey REcipes for building reliable and robust deep networks".* Our recipes are powerful tools in addressing real-world challenges, such as long-tailed classification, learning with noisy labels, data corruption and out-of-distribution detection. 
 
 
 [![arXiv](https://img.shields.io/badge/arXiv-2403.00543-red.svg)](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_SURE_SUrvey_REcipes_for_building_reliable_and_robust_deep_networks_CVPR_2024_paper.pdf) 
