@@ -1,10 +1,3 @@
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/learning-with-noisy-labels-on-animal)](https://paperswithcode.com/sota/learning-with-noisy-labels-on-animal?p=sure-survey-recipes-for-building-reliable-and) [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/image-classification-on-food-101n-1)](https://paperswithcode.com/sota/image-classification-on-food-101n-1?p=sure-survey-recipes-for-building-reliable-and)
-
-
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-50)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-50?p=sure-survey-recipes-for-building-reliable-and)       [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sure-survey-recipes-for-building-reliable-and/long-tail-learning-on-cifar-10-lt-r-10)](https://paperswithcode.com/sota/long-tail-learning-on-cifar-10-lt-r-10?p=sure-survey-recipes-for-building-reliable-and) 
-
-
-
 # 📝 SURE (CVPR 2024 & ECCV 2024 OOD-CV Challenge Winner)
 
 ### Introduction
